@@ -20,8 +20,8 @@ res.send("<h2>Welcome to Node JS express app</h2>"+appEnv.url+appEnv.port+port+p
 console.log(__dirname+"/images/mithunlogo.jpg");
 */
 app.get('/mithuntechnologies', function(request, response) {
-    response.send("<h2><center>Welcome to Node JS app</h2>");
-    //response.write("<h2><center><u>Node JS  Application </u></center></h2>");
+    //response.send("<h2><center>Welcome to Node JS app</h2>");
+    response.write("<h2><center><u>Node JS  Application </u></center></h2>");
 	
     response.write("<h2><center>Welcome to  Mithun Technologies. Please Contact +91-9980923226 for more information or send an email to devopstrainingblr@gmail.com <center></h2>" );
     response.end();
@@ -62,10 +62,10 @@ app.get("/status-code-404", function(req, res) {
       res.status(404).send('Sorry, we cannot find that!');
 })
 
-//app.get("/status-code-500", function(req, res) {
+app.get("/status-code-500", function(req, res) {
     //set content-type to application/json
     //res.sendStatus(500);
-   //res.status(500).send('Internal Server Error – custom message');
+   res.status(500).send('Internal Server Error – custom message');
 })
 
 app.get('/redirect', function(req, res) {
